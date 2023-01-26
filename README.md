@@ -12,3 +12,7 @@
 * Nested БЭМ
 * Flexbox
 * Медиазапросы
+
+----
+
+https://silverarrowz.github.io/mesto/
