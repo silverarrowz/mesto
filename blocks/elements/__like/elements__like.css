@@ -7,7 +7,6 @@
     border: none;
     cursor: pointer;
     transition: opacity .2s;
-    cursor: pointer;
 }
 
 .elements__like:hover {
