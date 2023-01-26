@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pages/index.css">
+    <title>Место</title>
+</head>
+
+<body class="page">
+    <header class="header">
+        <img class="header__logo" src="./images/logo.svg" alt="Логотип">
+    </header>
+
+    <main class="main">
+
+        <section class="profile">
+            <div class="profile__info">
+                <img class="profile__picture" src="./images/profile-picture.png" alt="Аватар">
+                <div class="profile__about">
+                    <div class="profile__edit-name">
+                        <h1 class="profile__name">Жак-Ив Кусто</h1>
+                        <div class="profile__edit-button"></div>
+                    </div>
+
+                    <p class="profile__title">Исследователь океана</p>
+                </div>
+            </div>
+            <div class="profile__add-button"></div>
+        </section>
+
+        <section class="elements">
+            <div class="elements__card"><img src="./images/elements_pic1.png" alt="Карачаевск" class="elements__image">
+                <div class="elements__info">
+                    <h2 class="elements__title">Карачаевск</h2>
+                    <button class="elements__like" type="button" aria-label="Поставить лайк"></button>
+                </div>
+            </div>
+
+            <div class="elements__card"><img src="./images/elements_pic2.png" alt="Гора Эльбрус"
+                    class="elements__image">
+                <div class="elements__info">
+                    <h2 class="elements__title">Гора Эльбрус</h2>
+                    <button class="elements__like" type="button" aria-label="Поставить лайк"></button>
+                </div>
+            </div>
+
+            <div class="elements__card"><img src="./images/elements_pic3.png" alt="Домбай" class="elements__image">
+                <div class="elements__info">
+                    <h2 class="elements__title">Домбай</h2>
+                    <button class="elements__like" type="button" aria-label="Поставить лайк"></button>
+                </div>
+            </div>
+
+            <div class="elements__card"><img src="./images/elements_pic3.png" alt="Гора Эльбрус"
+                    class="elements__image">
+                <div class="elements__info">
+                    <h2 class="elements__title">Гора Эльбрус</h2>
+                    <button class="elements__like" type="button" aria-label="Поставить лайк"></button>
+                </div>
+            </div>
+
+            <div class="elements__card"><img src="./images/elements_pic2.png" alt="Домбай" class="elements__image">
+                <div class="elements__info">
+                    <h2 class="elements__title">Домбай</h2>
+                    <button class="elements__like" type="button" aria-label="Поставить лайк"></button>
+                </div>
+            </div>
+
+            <div class="elements__card"><img src="./images/elements_pic1.png" alt="Карачаево-Черкесия" class="elements__image">
+                <div class="elements__info">
+                    <h2 class="elements__title">Карачаево-Черкесия</h2>
+                    <button class="elements__like" type="button" aria-label="Поставить лайк"></button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">&#169; 2020 Mesto Russia</footer>
+
+    <section class="popup">
+        <div class="popup__container">
+            <button class="popup__close-button" type="button" aria-label="Закрыть окно"></button>
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form class="form" name="profile-form">
+                <input class="form__field form__field_user_name" type="text" name="name" value="" placeholder="Имя"
+                    required>
+                <input class="form__field form__field_user_title" type="text" name="about" value="" placeholder="О себе"
+                    required>
+                <button class="form__save-button" type="submit" name="popup-button"
+                    aria-label="сохранить данные">Сохранить</button>
+            </form>
+        </div>
+    </section>
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>

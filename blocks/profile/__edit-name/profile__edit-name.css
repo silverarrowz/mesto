@@ -1,0 +1,11 @@
+.profile__edit-name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 440px) {
+    .profile__edit-name {
+        padding-left: 25px;
+    }
+}

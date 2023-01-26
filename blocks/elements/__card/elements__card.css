@@ -1,0 +1,12 @@
+.elements__card {
+    background-color: #fff;
+    width: 282px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 440px) {
+    .elements__card {
+        width: 100%;
+    }
+}
