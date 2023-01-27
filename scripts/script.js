@@ -7,19 +7,23 @@ let nameInput = document.querySelector('.form__field_user_name');
 let titleInput = document.querySelector('.form__field_user_title');
 let formEdit = document.querySelector('.form');
 
-function toggleForm() {
-  popup.classList.toggle('popup_opened');
+function openForm() {
+  popup.classList.add('popup_opened');
   nameInput.value = profileName.textContent;
   titleInput.value = profileTitle.textContent;
+}
+
+function closeForm() {
+  popup.classList.remove('popup_opened');
 }
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileTitle.textContent = titleInput.value;
-  toggleForm();
+  closeForm();
 }
 
-editBtn.addEventListener('click', toggleForm);
-closeBtn.addEventListener('click', toggleForm);
+editBtn.addEventListener('click', openForm);
+closeBtn.addEventListener('click', closeForm);
 formEdit.addEventListener('submit', formSubmitHandler);
