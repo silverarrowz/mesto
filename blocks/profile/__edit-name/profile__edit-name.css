@@ -1,7 +1,8 @@
 .profile__edit-name {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     margin-bottom: 10px;
+    width: 100%;
 }
 
 @media screen and (max-width: 440px) {

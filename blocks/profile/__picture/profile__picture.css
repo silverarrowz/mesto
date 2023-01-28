@@ -7,7 +7,7 @@
     object-position: center;
 }
 
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 520px) {
     .profile__picture {
         margin: 0 0 26px;
     }
