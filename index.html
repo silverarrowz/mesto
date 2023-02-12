@@ -31,69 +31,16 @@
         </section>
 
         <section class="elements">
-            <div class="elements__card">
-                <img src="./images/elements_pic1.png" alt="Карачаевск" class="elements__image">
-                <div class="elements__info">
-                    <h2 class="elements__title">Карачаевск</h2>
-                    <button class="elements__like" type="button" aria-label="Поставить лайк">
-                    </button>
-                </div>
-            </div>
-
-            <div class="elements__card">
-                <img src="./images/elements_pic2.png" alt="Гора Эльбрус" class="elements__image">
-                <div class="elements__info">
-                    <h2 class="elements__title">Гора Эльбрус</h2>
-                    <button class="elements__like" type="button" aria-label="Поставить лайк">
-                    </button>
-                </div>
-            </div>
-
-            <div class="elements__card">
-                <img src="./images/elements_pic3.png" alt="Домбай" class="elements__image">
-                <div class="elements__info">
-                    <h2 class="elements__title">Домбай</h2>
-                    <button class="elements__like" type="button" aria-label="Поставить лайк">
-                    </button>
-                </div>
-            </div>
-
-            <div class="elements__card">
-                <img src="./images/elements_pic3.png" alt="Гора Эльбрус" class="elements__image">
-                <div class="elements__info">
-                    <h2 class="elements__title">Гора Эльбрус</h2>
-                    <button class="elements__like" type="button" aria-label="Поставить лайк">
-                    </button>
-                </div>
-            </div>
-
-            <div class="elements__card">
-                <img src="./images/elements_pic2.png" alt="Домбай" class="elements__image">
-                <div class="elements__info">
-                    <h2 class="elements__title">Домбай</h2>
-                    <button class="elements__like" type="button" aria-label="Поставить лайк">
-                    </button>
-                </div>
-            </div>
-
-            <div class="elements__card">
-                <img src="./images/elements_pic1.png" alt="Карачаево-Черкесия" class="elements__image">
-                <div class="elements__info">
-                    <h2 class="elements__title">Карачаево-Черкесия</h2>
-                    <button class="elements__like" type="button" aria-label="Поставить лайк">
-                    </button>
-                </div>
-            </div>
         </section>
     </main>
 
     <footer class="footer">&#169; 2020 Mesto Russia</footer>
 
-    <section class="popup">
+    <section class="popup popup_type_edit-profile">
         <div class="popup__container">
             <button class="popup__close-button" type="button" aria-label="Закрыть окно"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="form" name="profile-form">
+            <form class="form form_type_edit-profile" name="profile-form">
                 <input class="form__field form__field_user_name" type="text" name="name" value="" placeholder="Имя"
                     required>
                 <input class="form__field form__field_user_title" type="text" name="title" value="" placeholder="О себе"
@@ -103,6 +50,41 @@
             </form>
         </div>
     </section>
+
+    <section class="popup popup_type_create-card">
+        <div class="popup__container">
+            <button class="popup__close-button" type="button" aria-label="Закрыть окно"></button>
+            <h2 class="popup__title">Новое место</h2>
+            <form class="form form_type_create-card" name="create-card-form">
+                <input class="form__field form__field_place-name" type="text" name="place-name" value=""
+                    placeholder="Название" required>
+                <input class="form__field form__field_place-picture" type="text" name="place-picture" value=""
+                    placeholder="Ссылка на картинку" required>
+                <button class="form__save-button" type="submit" name="popup-button"
+                    aria-label="сохранить данные">Создать</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="popup popup_type_image-preview">
+        <div class="popup__image-container">
+            <button class="popup__close-button" type="button" aria-label="Закрыть окно"></button>
+            <img class="popup__image" src="" alt="">
+            <h2 class="popup__image-title"></h2>
+        </div>
+    </section>
+
+    <template id="card-template">
+        <div class="element">
+            <button class="element__remove" type="button" aria-label="Удалить карточку"></button>
+            <img src="" alt="" class="element__image">
+            <div class="element__info">
+                <h2 class="element__title"></h2>
+                <button class="element__like" type="button" aria-label="Поставить лайк"></button>
+            </div>
+        </div>
+    </template>
+
     <script src="./scripts/script.js"></script>
 </body>
 
