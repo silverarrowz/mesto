@@ -74,7 +74,6 @@ function addCard(name, link) {
   cardElement.querySelector('.element__title').textContent = name;
   cardElement.querySelector('.element__image').alt = name;
   cardElement.querySelector('.element__image').src = link;
-  formCreateCard.reset();
 
   cardElement.querySelector('.element__remove').addEventListener('click', () => {
     cardElement.remove();
@@ -112,6 +111,7 @@ addBtn.addEventListener('click', function () {
 formCreateCard.addEventListener('submit', function(evt) {
   evt.preventDefault();
   elements.prepend(addCard(cardNameInput.value, cardPictureInput.value));
+  evt.target.reset();
   closePopup(popupCreateCard);
 });
 
