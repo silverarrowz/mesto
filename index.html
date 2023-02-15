@@ -40,14 +40,26 @@
         <div class="popup__container">
             <button class="popup__close-button" type="button" aria-label="Закрыть окно"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="form form_type_edit-profile" name="profile-form">
-                <input class="form__field form__field_user_name" type="text" name="name" value="" placeholder="Имя"
-                    required>
-                <input class="form__field form__field_user_title" type="text" name="title" value="" placeholder="О себе"
-                    required>
+
+            <!--Форма редактирования профиля-->
+
+            <form class="form form_type_edit-profile" name="profile-form" novalidate>
+                <label class="form__field-label">
+                    <input class="form__field form__field_user_name" type="text" name="name" minlength="2"
+                        maxlength="40" value="" placeholder="Имя" required>
+                    <span class="form__input-error name-input-error"></span>
+                </label>
+
+                <label class="form__field-label">
+                    <input class="form__field form__field_user_title" type="text" name="title" minlength="2"
+                        maxlength="200" value="" placeholder="О себе" required>
+                    <span class="form__input-error title-input-error"></span>
+                </label>
+
                 <button class="form__save-button" type="submit" name="popup-button"
                     aria-label="сохранить данные">Сохранить</button>
             </form>
+
         </div>
     </section>
 
@@ -55,14 +67,25 @@
         <div class="popup__container">
             <button class="popup__close-button" type="button" aria-label="Закрыть окно"></button>
             <h2 class="popup__title">Новое место</h2>
-            <form class="form form_type_create-card" name="create-card-form">
-                <input class="form__field form__field_place-name" type="text" name="place-name" value=""
-                    placeholder="Название" required>
-                <input class="form__field form__field_place-picture" type="text" name="place-picture" value=""
-                    placeholder="Ссылка на картинку" required>
+
+            <!--Форма добавления карточки-->
+
+            <form class="form form_type_create-card" name="create-card-form" novalidate>
+                <label class="form__field-label">
+                    <input class="form__field form__field_place-name" type="text" minlength="2" maxlength="30"
+                        name="place-name" value="" placeholder="Название" required>
+                    <span class="form__input-error place-name-input-error"></span>
+                </label>
+
+                <label class="form__field-label">
+                    <input class="form__field form__field_place-picture" type="url" name="place-picture" value=""
+                        placeholder="Ссылка на картинку" required>
+                    <span class="form__input-error place-picture-input-error"></span>
+                </label>
                 <button class="form__save-button" type="submit" name="popup-button"
                     aria-label="сохранить данные">Создать</button>
             </form>
+
         </div>
     </section>
 
@@ -86,6 +109,7 @@
     </template>
 
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/validate.js"></script>
 </body>
 
 </html>
