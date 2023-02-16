@@ -45,14 +45,14 @@
 
             <form class="form form_type_edit-profile" name="profile-form" novalidate>
                 <label class="form__field-label">
-                    <input class="form__field form__field_user_name" type="text" name="name" minlength="2"
-                        maxlength="40" value="" placeholder="Имя" required>
+                    <input class="form__field form__field_user_name" type="text" id="name-input"
+                        minlength="2" maxlength="40" value="" placeholder="Имя" required>
                     <span class="form__input-error name-input-error"></span>
                 </label>
 
                 <label class="form__field-label">
-                    <input class="form__field form__field_user_title" type="text" name="title" minlength="2"
-                        maxlength="200" value="" placeholder="О себе" required>
+                    <input class="form__field form__field_user_title" type="text" id="title-input"
+                        minlength="2" maxlength="200" value="" placeholder="О себе" required>
                     <span class="form__input-error title-input-error"></span>
                 </label>
 
@@ -73,12 +73,12 @@
             <form class="form form_type_create-card" name="create-card-form" novalidate>
                 <label class="form__field-label">
                     <input class="form__field form__field_place-name" type="text" minlength="2" maxlength="30"
-                        name="place-name" value="" placeholder="Название" required>
+                        id="place-name-input" value="" placeholder="Название" required>
                     <span class="form__input-error place-name-input-error"></span>
                 </label>
 
                 <label class="form__field-label">
-                    <input class="form__field form__field_place-picture" type="url" name="place-picture" value=""
+                    <input class="form__field form__field_place-picture" type="url" id="place-picture-input" value=""
                         placeholder="Ссылка на картинку" required>
                     <span class="form__input-error place-picture-input-error"></span>
                 </label>
