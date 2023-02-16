@@ -48,12 +48,21 @@ const initialCards = [
   }
 ];
 
-function openPopup(popup) {
-  popup.classList.add('popup_opened');
-}
-
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+}
+
+function openPopup(popup) {
+  popup.classList.add('popup_opened');
+  closeOnEsc();
+}
+
+function closeOnEsc() {
+  document.addEventListener('keydown', function (evt) {
+  if (evt.key === 'Escape') {
+    closePopup(document.querySelector('.popup_opened'));
+  };
+});
 }
 
 function openPopupEditProfile() {
@@ -121,12 +130,6 @@ popups.forEach((popup) => {
       closePopup(this);
     };
   });
-})
-
-document.addEventListener('keydown', function (evt) {
-  if (evt.key === 'Escape') {
-    closePopup(document.querySelector('.popup_opened'));
-  };
 })
 
 renderCards();
