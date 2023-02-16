@@ -1,6 +1,6 @@
 const addBtn = document.querySelector('.profile__add-button');
 const editBtn = document.querySelector('.profile__edit-button');
-const closeBtns = document.querySelectorAll('.popup__close-button');
+const popups = document.querySelectorAll('.popup');
 
 const popupEditProfile = document.querySelector('.popup_type_edit-profile');
 const formEdit = document.querySelector('.form_type_edit-profile'); 
@@ -115,10 +115,18 @@ formCreateCard.addEventListener('submit', function(evt) {
   closePopup(popupCreateCard);
 });
 
-closeBtns.forEach((closeBtn) => {
-  closeBtn.addEventListener('click', function () {
-    closePopup(this.closest('.popup'));
+popups.forEach((popup) => {
+  popup.addEventListener('click', function (evt) {
+    if (evt.target === popup || evt.target.classList.contains('popup__close-button')) {
+      closePopup(this);
+    };
   });
+})
+
+document.addEventListener('keydown', function (evt) {
+  if (evt.key === 'Escape') {
+    closePopup(document.querySelector('.popup_opened'));
+  };
 })
 
 renderCards();
