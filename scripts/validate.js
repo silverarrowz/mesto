@@ -36,8 +36,10 @@ const enableValidation = ({
     const toggleButtonState = (inputs, submitButton) => {
       if (hasInvalidInput(inputs)) {
         submitButton.classList.add(inactiveButtonClass);
+        submitButton.setAttribute('disabled', true);
       } else {
         submitButton.classList.remove(inactiveButtonClass);
+        submitButton.removeAttribute('disabled');
       }
     };
 
@@ -53,12 +55,19 @@ const enableValidation = ({
           toggleButtonState(inputs, submitButton);
         });
       });
+
+      form.addEventListener('reset', function() {
+        setTimeout(function() {
+          toggleButtonState(inputs, submitButton);
+        }, 0);
+      });
     }
 
     const forms = Array.from(document.querySelectorAll(formSelector));
     forms.forEach((form) => {
       setEventListeners(form);
       form.addEventListener('submit', (evt) => {
+        
         evt.preventDefault();
       });
     });
