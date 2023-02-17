@@ -23,19 +23,19 @@ const elements = document.querySelector('.elements');
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closeOnEsc);
 }
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
-  closeOnEsc();
+  document.addEventListener('keydown', closeOnEsc);
 }
 
-function closeOnEsc() {
-  document.addEventListener('keydown', function (evt) {
+function closeOnEsc(evt) {
   if (evt.key === 'Escape') {
     closePopup(document.querySelector('.popup_opened'));
+    console.log(evt);
   };
-});
 }
 
 function openPopupEditProfile() {
