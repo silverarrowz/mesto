@@ -18,13 +18,13 @@
         <section class="profile">
             <div class="profile__info">
                 <img class="profile__picture" src="./images/profile-picture.png" alt="Аватар">
-                <div class="profile__about">
+                <div class="profile__name-and-about">
                     <div class="profile__edit-name">
                         <h1 class="profile__name">Жак-Ив Кусто</h1>
                         <button class="profile__edit-button" type="button" aria-label="Редактировать профиль"></button>
                     </div>
 
-                    <p class="profile__title">Исследователь океана</p>
+                    <p class="profile__about">Исследователь океана</p>
                 </div>
             </div>
             <button class="profile__add-button" type="button" aria-label="Добавить карточку"></button>
@@ -51,7 +51,7 @@
                 </label>
 
                 <label class="form__field-label">
-                    <input class="form__field form__field_user_title" type="text" id="title-input"
+                    <input class="form__field form__field_user_about" type="text" id="title-input"
                         minlength="2" maxlength="200" value="" placeholder="О себе" required>
                     <span class="form__input-error title-input-error"></span>
                 </label>
