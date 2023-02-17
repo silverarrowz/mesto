@@ -56,6 +56,8 @@ const enableValidation = ({
         });
       });
 
+      /*деактивация кнопки сабмита при повторном открытии формы после добавления карточки*/
+      
       form.addEventListener('reset', function() {
         setTimeout(function() {
           toggleButtonState(inputs, submitButton);
@@ -67,7 +69,6 @@ const enableValidation = ({
     forms.forEach((form) => {
       setEventListeners(form);
       form.addEventListener('submit', (evt) => {
-        
         evt.preventDefault();
       });
     });
