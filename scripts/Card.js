@@ -16,21 +16,21 @@ class Card {
     }
 
     _setEventListeners() {
-        this._element.querySelector('.element__like').addEventListener('click', () => {
+        this._likeButton.addEventListener('click', () => {
             this._handleLikeClick();
         })
 
-        this._element.querySelector('.element__remove').addEventListener(('click'), () => {
+        this._deleteButton.addEventListener(('click'), () => {
             this._handleDeleteClick();
         })
 
-        this._element.querySelector('.element__image').addEventListener('click', () => {
+        this._cardImage.addEventListener('click', () => {
             this._handleOpenPopup(this._name, this._image);
         });
     }
 
     _handleLikeClick() {
-        this._element.querySelector('.element__like').classList.toggle('element__like_active');
+        this._likeButton.classList.toggle('element__like_active');
     }
 
     _handleDeleteClick() {
@@ -39,11 +39,13 @@ class Card {
 
     generateCard() {
         this._element = this._getTemplate();
+        this._cardImage = this._element.querySelector('.element__image');
+        this._likeButton = this._element.querySelector('.element__like');
+        this._deleteButton = this._element.querySelector('.element__remove');
 
         this._element.querySelector('.element__title').textContent = this._name;
-        this._element.querySelector('.element__image').alt = this._name;
-        this._element.querySelector('.element__image').src = this._image;
-
+        this._cardImage.alt = this._name;
+        this._cardImage.src = this._image;
         
         this._setEventListeners();
         return this._element;
