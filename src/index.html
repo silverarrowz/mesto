@@ -5,19 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.css">
     <title>Место</title>
 </head>
 
 <body class="page">
     <header class="header">
-        <img class="header__logo" src="./images/logo.svg" alt="Логотип">
+        <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Логотип">
     </header>
 
     <main class="main">
         <section class="profile">
             <div class="profile__info">
-                <img class="profile__picture" src="./images/profile-picture.png" alt="Аватар">
+                <img class="profile__picture" src="<%=require('./images/profile-picture.png')%>" alt="Аватар">
                 <div class="profile__name-and-about">
                     <div class="profile__edit-name">
                         <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -38,20 +37,20 @@
 
     <section class="popup popup_type_edit-profile">
         <div class="popup__container">
-            <button class="popup__close-button" type="button" aria-label="Закрыть окно"></button>
+            <button class="popup__close-btn" type="button" aria-label="Закрыть окно"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
 
             <!--Форма редактирования профиля-->
 
             <form class="form form_type_edit-profile" name="profile-form" novalidate>
                 <label class="form__field-label">
-                    <input class="form__field form__field_user_name" type="text" id="name-input"
+                    <input class="form__field form__field_user_name" type="text" id="name-input" name="name"
                         minlength="2" maxlength="40" value="" placeholder="Имя" required>
                     <span class="form__input-error name-input-error"></span>
                 </label>
 
                 <label class="form__field-label">
-                    <input class="form__field form__field_user_about" type="text" id="title-input"
+                    <input class="form__field form__field_user_about" type="text" id="title-input" name="about"
                         minlength="2" maxlength="200" value="" placeholder="О себе" required>
                     <span class="form__input-error title-input-error"></span>
                 </label>
@@ -65,7 +64,7 @@
 
     <section class="popup popup_type_create-card">
         <div class="popup__container">
-            <button class="popup__close-button" type="button" aria-label="Закрыть окно"></button>
+            <button class="popup__close-btn" type="button" aria-label="Закрыть окно"></button>
             <h2 class="popup__title">Новое место</h2>
 
             <!--Форма добавления карточки-->
@@ -73,12 +72,12 @@
             <form class="form form_type_create-card" name="create-card-form" novalidate>
                 <label class="form__field-label">
                     <input class="form__field form__field_place-name" type="text" minlength="2" maxlength="30"
-                        id="place-name-input" value="" placeholder="Название" required>
+                        id="place-name-input" name="name" value="" placeholder="Название" required>
                     <span class="form__input-error place-name-input-error"></span>
                 </label>
 
                 <label class="form__field-label">
-                    <input class="form__field form__field_place-picture" type="url" id="place-picture-input" value=""
+                    <input class="form__field form__field_place-picture" type="url" id="place-picture-input" name="link" value=""
                         placeholder="Ссылка на картинку" required>
                     <span class="form__input-error place-picture-input-error"></span>
                 </label>
@@ -91,7 +90,7 @@
 
     <section class="popup popup_type_image-preview">
         <div class="popup__image-container">
-            <button class="popup__close-button" type="button" aria-label="Закрыть окно"></button>
+            <button class="popup__close-btn" type="button" aria-label="Закрыть окно"></button>
             <img class="popup__image" src=" " alt="">
             <h2 class="popup__image-title"></h2>
         </div>
@@ -108,10 +107,6 @@
         </div>
     </template>
 
-    <script type="module" src="./scripts/constants.js"></script>
-    <script type="module" src="./scripts/Card.js"></script>
-    <script type="module" src="./scripts/FormValidator.js"></script>
-    <script type="module" src="./scripts/script.js"></script>
 </body>
 
 </html>
