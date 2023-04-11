@@ -70,6 +70,9 @@ export class FormValidator {
 
     this._formElement.addEventListener('reset', () => {
       this._disableSubmitButton();
+      this._inputList.forEach((inputElement) => {
+        this._hideInputError(inputElement);
+      })
     });
   }
 
