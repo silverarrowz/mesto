@@ -6,6 +6,14 @@ export default class PopupWithConfirmation extends Popup {
     this._handleSubmitCallback = handleSubmitCallback;
     this._form = this._popup.querySelector('.form');
   }
+
+  renderLoading(isLoading, text) {
+    if (isLoading) {
+      this._submitBtn.textContent = 'Сохранение...';
+    } else {
+      this._submitBtn.textContent = text;
+    }
+  }
   
   setSubmitAction(action) {
     this._handleSubmitCallback = action;

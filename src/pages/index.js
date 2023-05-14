@@ -11,13 +11,13 @@ import { FormValidator } from "../components/FormValidator.js";
 
 const formEditProfile = document.forms["profile-form"];
 const btnPopupEditProfile = document.querySelector('.profile__edit-btn');
-const formNewCard = document.forms["create-card-form"];
-const btnPopupNewCard = document.querySelector('.profile__add-btn');
+const formCreateCard = document.forms["create-card-form"];
+const btnPopupCreateCard = document.querySelector('.profile__add-btn');
 const formAvatar = document.forms["avatar-form"];
 const btnUpdteAvatar = document.querySelector('.profile__edit-avatar-btn')
 
 const profileFormValidation = new FormValidator(config, formEditProfile);
-const newCardFormValidation = new FormValidator(config, formNewCard);
+const createCardFormValidation = new FormValidator(config, formCreateCard);
 const avatarFormValidation = new FormValidator(config, formAvatar);
 const popupWithImage = new PopupWithImage('.popup_type_image-preview');
 const userInfo = new UserInfo('.profile__name', '.profile__about', '.profile__avatar');
@@ -46,7 +46,7 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
   .catch(handleApiError);
 
 
-const NewCard = (item) => {
+const createCard = (item) => {
   const card = new Card({
     data: item,
     userId: userInfo.getUserId(),
@@ -80,7 +80,7 @@ const NewCard = (item) => {
 
 const cardList = new Section({
   renderer: (item) => {
-    cardList.appendItem(NewCard(item));
+    cardList.appendItem(createCard(item));
   },
 }, '.elements');
 
@@ -97,16 +97,16 @@ const popupProfileEdit = new PopupWithForm({
   }
 });
 
-const popupAddNewCard = new PopupWithForm({
+const popupCreateCard = new PopupWithForm({
   popupSelector: '.popup_type_new-card',
   handleFormSubmit: (inputData) => {
-    api.addNewCard(inputData)
+    api.createCard(inputData)
       .then((res) => {
-        cardList.addItem(NewCard(res));
-        popupAddNewCard.close();
+        cardList.addItem(createCard(res));
+        popupCreateCard.close();
       })
       .catch(handleApiError)
-      .finally(() => popupAddNewCard.renderLoading(false, 'Создать'))
+      .finally(() => popupCreateCard.renderLoading(false, 'Создать'))
   }
 });
 
@@ -127,23 +127,23 @@ const openPopupProfileEdit = () => {
   popupProfileEdit.open();
   popupProfileEdit.setInputValues(userInfo.getUserInfo());
 }
-const openPopupNewCard = () => {
-  popupAddNewCard.open();
+const openPopupCreateCard = () => {
+  popupCreateCard.open();
 }
 const openPopupAvatarUpdate = () => {
   popupAvatarUpdate.open();
 } 
 
-btnPopupNewCard.addEventListener('click', openPopupNewCard);
+btnPopupCreateCard.addEventListener('click', openPopupCreateCard);
 btnUpdteAvatar.addEventListener('click', openPopupAvatarUpdate);
 btnPopupEditProfile.addEventListener('click', openPopupProfileEdit);
 
 popupWithImage.setEventListeners();
 popupProfileEdit.setEventListeners();
 popupAvatarUpdate.setEventListeners();
-popupAddNewCard.setEventListeners();
+popupCreateCard.setEventListeners();
 popupCardDeleteConfirm.setEventListeners();
 
 profileFormValidation.enableValidation();
-newCardFormValidation.enableValidation();
+createCardFormValidation.enableValidation();
 avatarFormValidation.enableValidation();

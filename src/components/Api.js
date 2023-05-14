@@ -43,7 +43,7 @@ export default class Api {
     .then(res => this._checkResponse(res));
   }
   
-  addNewCard(inputData) {
+  createCard(inputData) {
     return fetch(`${this._baseUrl}/cards`, {
       method: 'POST',
       headers: this._headers,

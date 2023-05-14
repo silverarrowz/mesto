@@ -13,13 +13,13 @@ export default class UserInfo {
   }
 
   setUserInfo(data) {
-    this._name.textContent = data.name;
-    this._about.textContent = data.about;
-    this._userId = data._id;
+    this._name.textContent = data.name ? data.name : '';
+    this._about.textContent = data.about ? data.about : '';
+    this._userId = data._id ? data._id : '';
   }
 
   setAvatar(data) {
-    this._avatar.src = data.avatar;
+    this._avatar.src = data.avatar ? data.avatar : '';
   }
 
   getUserId() {
