@@ -34,6 +34,7 @@
 @import url(../blocks/form/__item/form__item.css);
 @import url(../blocks/form/__save-btn/form__save-btn.css);
 @import url(../blocks/form/__save-btn/_disabled/form__save-btn_disabled.css);
+@import url(../blocks/form/__save-btn/_type/form__save-btn_type_card-delete.css);
 @import url(../blocks/form/__error/form__error.css);
 @import url(../blocks/form/__error/_active/form__error_active.css);
 @import url(../blocks/form/__item/_type/form__item_type_error.css);
