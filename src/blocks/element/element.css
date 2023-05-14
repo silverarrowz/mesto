@@ -1,13 +1,8 @@
 .element {
-    position: relative;
-    background-color: #fff;
-    width: 282px;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-@media screen and (max-width: 440px) {
-    .element {
-        width: 100%;
-    }
+  max-width: 282px;
+  height: 361px;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
 }

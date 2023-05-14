@@ -1,14 +1,12 @@
 .footer {
-    margin-bottom: 55px;
-    color: #545454;
-    font-size: 18px;
-    font-weight: 400;
+  width: 69%;
+  margin: 0 auto 60px;
+  flex-shrink: 0;
 }
 
-@media screen and (max-width: 890px) {
-    .footer {
-        padding-left: 19px;
-        margin: 0 auto 36px;
-        font-size: 14px;
-    }
+@media screen and (max-width: 320px) {
+  .footer {
+    width: 88%;
+    margin-bottom: 36px;
+  }
 }

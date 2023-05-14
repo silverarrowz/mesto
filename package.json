@@ -9,12 +9,19 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist -r https://github.com/silverarrowz/mesto.git"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silverarrowz/mesto.git"
+  },
   "author": "",
   "license": "ISC",
-  "homepage": "https://silverarrowz.github.io/mesto/",
+  "bugs": {
+    "url": "https://github.com/silverarrowz/mesto/issues"
+  },
+  "homepage": "https://github.com/silverarrowz/mesto#readme",
   "devDependencies": {
-    "@babel/core": "^7.21.4",
-    "@babel/preset-env": "^7.21.4",
+    "@babel/core": "^7.21.3",
+    "@babel/preset-env": "^7.20.2",
     "autoprefixer": "^10.4.14",
     "babel-loader": "^9.1.2",
     "clean-webpack-plugin": "^4.0.0",
@@ -23,10 +30,10 @@
     "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.5",
-    "postcss-loader": "^7.2.4",
-    "webpack": "^5.76.3",
-    "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.13.2"
+    "postcss-loader": "^7.1.0",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.13.1"
   },
   "dependencies": {
     "core-js": "^3.29.1"
