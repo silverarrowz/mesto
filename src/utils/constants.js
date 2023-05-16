@@ -34,7 +34,7 @@ export const initialCards = [
   }
 ];
 
-export const popupProfile = document.querySelector('.popup_type_profile');
+export const popupProfile = document.querySelector('.popup_type_edit_profile');
 export const profileName = document.querySelector('.profile__name');
 export const profileAbout = document.querySelector('.profile__about');
 export const profileAvatar = document.querySelector('.profile__avatar');

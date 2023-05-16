@@ -20,6 +20,9 @@ const profileFormValidation = new FormValidator(config, formEditProfile);
 const createCardFormValidation = new FormValidator(config, formCreateCard);
 const avatarFormValidation = new FormValidator(config, formAvatar);
 const popupWithImage = new PopupWithImage('.popup_type_image-preview');
+const nameInput = formEditProfile.querySelector('.form__item_user_name');
+const aboutInput = formEditProfile.querySelector('.form__item_user_about');
+
 const userInfo = new UserInfo('.profile__name', '.profile__about', '.profile__avatar');
 const popupCardDeleteConfirm = new PopupWithConfirmation('.popup_type_card-delete');
 let userId;
@@ -40,8 +43,8 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
   .then(([userData, cardsData]) => {
     userId = userData._id;
     userInfo.setUserInfo(userData);
-    cardList.renderItems(cardsData);
     userInfo.setAvatar(userData);
+    cardList.renderItems(cardsData);
   })
   .catch(handleApiError);
 
@@ -85,7 +88,7 @@ const cardList = new Section({
 }, '.elements');
 
 const popupProfileEdit = new PopupWithForm({
-  popupSelector: '.popup_type_profile',
+  popupSelector: '.popup_type_edit_profile',
   handleFormSubmit: (inputData) => {
     api.editProfile(inputData)
       .then(res => {
@@ -125,7 +128,10 @@ const popupAvatarUpdate = new PopupWithForm({
 
 const openPopupProfileEdit = () => {
   popupProfileEdit.open();
-  popupProfileEdit.setInputValues(userInfo.getUserInfo());
+  profileFormValidation.resetValidation();
+  const newUserInfo = userInfo.getUserInfo();
+  nameInput.value = newUserInfo.name;
+  aboutInput.value = newUserInfo.about;
 }
 const openPopupCreateCard = () => {
   popupCreateCard.open();
